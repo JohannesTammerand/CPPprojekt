@@ -12,6 +12,7 @@
         "*.tcc": "cpp",
         "cstdint": "cpp",
         "typeinfo": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "vector": "cpp"
     }
 }

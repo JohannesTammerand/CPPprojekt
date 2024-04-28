@@ -3,34 +3,41 @@
 
 using namespace std;
 
-void Object::applyVelocity(){
-    if (y != 0){
-        velocityUp -= g;
-    }
+void Object::applyVelocity(vector<float> nV)
+{
+    //TEHTUD MADISE POOLT!!!!
+    velocity[0] += nV[0];
+    velocity[1] += nV[1];
+}
 
-    y = fmax(y + velocityUp, 0.0);
-    x = x + velocitySide;
-
-    if (y == 0) {
-        velocityUp = 0;
-    }
-
-    if (velocitySide > 0){
-        velocitySide = fmin(velocitySide - 0.2, 0.0);
-    } else {
-        velocitySide = fmax(velocitySide + 0.2, 0.0);
-    }
+void Object::calculateNewPos()
+{
+    x += velocity[0];
+    y += velocity[1];
 }
 
 void Object::pushSide(float f){
-    velocitySide += f;
+    velocity[1] += f;
 }
 
 void Object::pushUp(float f){
-    velocityUp += f;
+    velocity[0] += f;
 }
 
-int* Object::getPos(){
-    static int p[2] = {x, y};
+float Object::getX()
+{
+    return x;
+}
+float Object::getY()
+{
+    return y;
+}
+float Object::getM()
+{
+    return m;
+}
+
+float* Object::getPos(){
+    static float p[2] = {x, y};
     return p;
 }
