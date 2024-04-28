@@ -11,9 +11,9 @@ int tick;
 
 void calculate_physics()
 {
-    for(auto grav_point : Grav)
+    for(auto& grav_point : Grav)
     {
-        for(auto object : Obj)
+        for(auto& object : Obj)
         {
             object.applyVelocity(veloctiy_add_from_pull(grav_point, object));
         }
