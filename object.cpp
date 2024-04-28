@@ -36,8 +36,3 @@ float Object::getM()
 {
     return m;
 }
-
-float* Object::getPos(){
-    static float p[2] = {x, y};
-    return p;
-}

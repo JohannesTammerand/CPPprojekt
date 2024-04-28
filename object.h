@@ -8,8 +8,8 @@ using namespace std;
 class Object{
 public:
     Object () : x{0}, y{0}, g{0}, velocity{{0,0}} {};
-    Object (float nx, float ny, float ng) : y{ny}, x{nx}, g{ng} {};
-    Object (float nx, float ny, float ng, float nm) : y{ny}, x{nx}, g{ng}, m{nm} {};
+    Object (float nx, float ny, float ng) : y{ny}, x{nx}, g{ng}, velocity{{0,0}} {};
+    Object (float nx, float ny, float ng, float nm) : y{ny}, x{nx}, g{ng}, m{nm}, velocity{{0,0}} {};
 
     void applyVelocity(vector<float> nV);
     void calculateNewPos();
@@ -19,8 +19,6 @@ public:
     float getX();
     float getY();
     float getM();
-    float* getPos();
-    friend ostream& operator<<(ostream& os, const Object o);
 private:
     vector<float> velocity;
     float y;

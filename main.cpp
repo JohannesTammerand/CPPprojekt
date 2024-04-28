@@ -22,7 +22,7 @@ void calculate_physics()
 
 void post_tick()
 {
-    for(auto object : Obj)
+    for(auto& object : Obj)
     {
         object.calculateNewPos();
     }
@@ -32,7 +32,7 @@ void display()
 {
     for(auto object : Obj)
     {
-        cout << object.getX() << object.getY() << " - on tick : " << tick << endl;
+        cout << "X : " << object.getX() << " Y : " << object.getY() << " - on tick : " << tick << endl;
     }
 }
 
@@ -49,11 +49,12 @@ int main()
     Object gra = Object(0, 0, 0, 1);
     Grav.push_back(gra);
 
-    while(tick <= 100000000000000)
+    while(tick <= 100000)
     {
         calculate_physics();
         post_tick();
         display();
+        tick += 1;
     }
     return 1;
 }

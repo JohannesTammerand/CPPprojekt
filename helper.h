@@ -12,7 +12,9 @@ namespace physHelper
     {
         float dx = obj2.getX() - obj1.getX();
         float dy = obj2.getY() - obj1.getY();
-        return vector<float>{dx/distance_from_point(obj1,obj2), dy/distance_from_point(obj1,obj2)};
+        vector<float> dir = vector<float>{dx/distance_from_point(obj1,obj2), dy/distance_from_point(obj1,obj2)};
+        std::cout  << dir[0]<< " - " << dir[1] << " - " << dx << " - " << dy << endl;
+        return dir;
     }
 
     float gravitational_pull(Object obj1, Object obj2)
