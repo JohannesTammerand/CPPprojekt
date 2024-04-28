@@ -29,9 +29,5 @@ private:
     float g;
 };
 
-ostream& operator<<(ostream& os, Object o){
-    os << "(" << o.x << ", " << o.y << ")" << endl;
-    return os; 
-}
 
 #endif

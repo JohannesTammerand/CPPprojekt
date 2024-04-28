@@ -32,7 +32,7 @@ void display()
 {
     for(auto object : Obj)
     {
-        cout << object << " - on tick : " << tick << endl;
+        cout << object.getX() << object.getY() << " - on tick : " << tick << endl;
     }
 }
 
